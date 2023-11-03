@@ -1,0 +1,101 @@
+body,html{
+	height: 100%;
+	width: 100%;
+}
+.main-container{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: green;
+}
+.main-container > .login,
+.main-container > .hero-body{
+	height: auto;
+	width: 100%;
+	max-width: 400px;
+	min-width: 300px;
+}
+/* Clase de color verde personalizado */
+.is-custom-green {
+	background-color: #2E7D32; /* Color verde oscuro personalizado */
+	color: #fff; /* Color de texto blanco o claro */
+	/* Otros estilos que desees aplicar */
+  }
+   
+.form-inline{
+	display: inline-flex;
+}
+
+/* Estilos para el contenedor de las cajas pequeñas */
+.container-fluid {
+	padding: 60px; /* Ajusta el espaciado según tus necesidades */
+  }
+  
+  /* Estilos para las cajas pequeñas */
+  .small-box {
+	border: 3px solid #d2d6de; /* Borde de la caja */
+	border-radius: 4px; /* Esquinas redondeadas */
+	display: block;
+	margin: 8px;
+	background-color: #fff; /* Color de fondo de la caja */
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	width: 200px; /* Ancho de la caja */
+ height: 150px; /* Altura de la caja */
+  }
+  
+  /* Estilos para el contenido dentro de las cajas */
+  .small-box .inner {
+	padding: 15px; /* Espaciado interior del contenido */
+  }
+  
+  /* Estilos para el icono dentro de las cajas */
+  .small-box .icon {
+	text-align: center;
+	font-size: 48px; /* Tamaño del ícono */
+	margin: 10px 0; /* Espaciado entre el ícono y el contenido */
+  }
+  
+  /* Estilos para los números en el contenido */
+  .small-box h3 {
+	font-size: 36px; /* Tamaño del número */
+	font-weight: bold; /* Negrita */
+  }
+  
+  /* Estilos para los títulos en el contenido */
+  .small-box h4 {
+	font-size: 16px; /* Tamaño del título */
+  }
+  
+  /* Estilos para los colores de fondo de las cajas pequeñas */
+  .bg-info {
+	background-color: #6d12e6; /* Color de fondo azul claro */
+	color: #fff; /* Color de texto blanco o claro */
+  }
+  
+  .bg-primary {
+	background-color: #ca580c; /* Color de fondo naranja */
+	color: #fff; /* Color de texto blanco o claro */
+  }
+  
+  .bg-success {
+	background-color: #28a745; /* Color de fondo verde */
+	color: #fff; /* Color de texto blanco o claro */
+  }
+  
+  .bg-danger {
+	background-color: #dc3545; /* Color de fondo rojo */
+	color: #fff; /* Color de texto blanco o claro */
+  }
+  
+  .bg-warning {
+	background-color: #ffc107; /* Color de fondo amarillo */
+	color: #212529; /* Color de texto oscuro */
+  }
+  
+  .bg-secondary {
+	background-color: #6c757d; /* Color de fondo gris */
+	color: #fff; /* Color de texto blanco o claro */
+  }
+  
