@@ -1,33 +1,53 @@
-<div class="main-container">
-
-	<form class="box login" action="" method="POST" autocomplete="off">
-		<h5 class="title is-5 has-text-centered is-uppercase">Sistema de inventario</h5>
-
-		<div class="field">
-			<label class="label">Usuario</label>
-			<div class="control">
-			    <input class="input" type="text" name="login_usuario" pattern="[a-zA-Z0-9]{4,20}" maxlength="20" required >
-			</div>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animated Login Form</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+</head>
+<body>
+	<img class="wave" src="img/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="IMG/LOGO-ESCUDO-BALDWIN-PNG-1.png">
 		</div>
+		<div class="login-content">
+			<form class="box login" action="" method="POST" autocomplete="off">
+				<img src="img/txtlog.png"><br><br>
+				<H2>INVENTARIO</H2>
+				<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Usuario</h5>
+           		   		<input class="input" type="text" name="login_usuario" pattern="[a-zA-Z0-9]{4,20}" maxlength="20" required >
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Contraseña</h5>
+           		    	<input class="input" type="password" name="login_clave" pattern="[a-zA-Z0-9$@.-]{3,100}" maxlength="100" required >
+            	   </div>
+            	</div>
+            	
+				<input type="submit" class="btn" value="INGRESAR">
 
-		<div class="field">
-		  	<label class="label">Clave</label>
-		  	<div class="control">
-		    	<input class="input" type="password" name="login_clave" pattern="[a-zA-Z0-9$@.-]{3,100}" maxlength="100" required >
-		  	</div>
-		</div>
-
-		<p class="has-text-centered mb-4 mt-3">
-			<button type="submit" class="button is-custom-green is-rounded">Iniciar sesion</button>
-		</p>
-
-		<?php
-			if(isset($_POST['login_usuario']) && isset($_POST['login_clave'])){
-				require_once "./php/main.php";
-				require_once "./php/iniciar_sesion.php";
-			}
-		?>
-	</form>
-
-
-</div>
+				<?php
+			       if(isset($_POST['login_usuario']) && isset($_POST['login_clave'])){
+				   require_once "./php/main.php";
+				   require_once "./php/iniciar_sesion.php";
+			         }
+		           ?>	
+				
+            	
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/login.js"></script>
+</body>
+</html>
