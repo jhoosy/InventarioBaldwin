@@ -42,7 +42,7 @@
         <div class="small-box bg-success">
           <div class="inner">
             <h3><span id="productosCount">0</span></h3>
-            <h4>PRODUCTOS</h4>
+            <h4>EQUIPOS</h4>
           </div>
           <div class="icon">
             <i class="ion ion-briefcase"></i>

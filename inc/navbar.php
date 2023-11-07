@@ -41,7 +41,7 @@
             </div>
 
             <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">Productos</a>
+                <a class="navbar-link">Equipos</a>
 
                 <div class="navbar-dropdown">
                     <a href="index.php?vista=product_new" class="navbar-item">Nuevo</a>
