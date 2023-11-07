@@ -8,8 +8,9 @@ body,html{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: green;
+	background-color: rgb(201, 12, 12);
 }
+
 .main-container > .login,
 .main-container > .hero-body{
 	height: auto;
@@ -19,7 +20,7 @@ body,html{
 }
 /* Clase de color verde personalizado */
 .is-custom-green {
-	background-color: #2E7D32; /* Color verde oscuro personalizado */
+	background-color: rgb(24, 104, 48); /* Color verde oscuro personalizado */
 	color: #fff; /* Color de texto blanco o claro */
 	/* Otros estilos que desees aplicar */
   }
@@ -31,6 +32,7 @@ body,html{
 /* Estilos para el contenedor de las cajas pequeñas */
 .container-fluid {
 	padding: 60px; /* Ajusta el espaciado según tus necesidades */
+	background-color: rgb(245, 247, 245);
   }
   
   /* Estilos para las cajas pequeñas */
@@ -98,4 +100,91 @@ body,html{
 	background-color: #6c757d; /* Color de fondo gris */
 	color: #fff; /* Color de texto blanco o claro */
   }
+
+
+  /* Estilo para la barra de navegación */
+.navbar {
+    background-color: #920808; /* Color de fondo de la barra de navegación */
+    color: #ad1717; /* Color del texto en la barra de navegación */
+    /* Otros estilos deseados */
+}
+
+/* Estilo para la marca del logotipo */
+.navbar-brand {
+    /* Estilos para el contenedor de la marca */
+	background-color: rgb(8, 95, 44);
+}
+
+/* Estilo para el logotipo */
+.navbar-brand a.navbar-item img {
+    /* Estilos para la imagen del logotipo */
+    max-width: 100%; /* Asegura que la imagen se ajuste al ancho del contenedor */
+    height: auto; /* Ajusta la altura automáticamente según el ancho */
+}
+
+/* Estilo para el botón de hamburguesa */
+.navbar-burger {
+    /* Estilos para el botón de hamburguesa */
+	background-color: #000000;
+}
+
+/* Estilo para los elementos del menú */
+.navbar-menu {
+    /* Estilos para el menú */
+	background-color: rgb(8, 95, 44);
+}
+
+/* Estilo para los elementos de la parte izquierda del menú */
+.navbar-start {
+    /* Estilos para los elementos de la parte izquierda del menú */
+	background-color: rgb(8, 95, 44);
+	
+}
+
+/* Estilo para los enlaces del menú */
+.navbar-link:hover {
+    color: #065f03;
+
+	
+}
+.navbar-link {
+    color: #dee4de;
+
+	
+}
+
+/* Estilo para el botón "Mi cuenta" */
+.button.is-primary-custom {
+    background-color: rgb(8, 95, 44); /* Cambia el color de fondo para el botón "Mi cuenta" */
+    color: #fff; /* Cambia el color del texto */
+    border-radius: 5px; /* Añade esquinas redondeadas */
+    padding: 10px 20px; /* Ajusta el espaciado interno del botón */
+    font-size: 16px; /* Cambia el tamaño del texto en el botón */
+    /* Otros estilos deseados */
+}
+
+/* Estilo para el botón "Salir" */
+.button.is-link-custom {
+    background-color: rgb(8, 95, 44); /* Cambia el color de fondo para el botón "Salir" */
+    color: #fff; /* Cambia el color del texto */
+    border-radius: 5px; /* Añade esquinas redondeadas */
+    padding: 10px 20px; /* Ajusta el espaciado interno del botón */
+    font-size: 16px; /* Cambia el tamaño del texto en el botón */
+    /* Otros estilos deseados */
+}
+.button.is-link-custom:hover{
+  color: #ffffff;
+  background-color: #d31414;
+}
+
+.button.is-primary-custom:hover{
+  color: #146809;
+  background-color: #ffffff;
+}
+
+
+
+
+
+
   

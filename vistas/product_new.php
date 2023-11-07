@@ -1,6 +1,6 @@
 <div class="container is-fluid mb-6">
-	<h1 class="title">Productos</h1>
-	<h2 class="subtitle">Nuevo producto</h2>
+	<h1 class="title">Equipos</h1>
+	<h2 class="subtitle">Nuevo equipo</h2>
 </div>
 
 <div class="container pb-6 pt-6">
@@ -60,14 +60,14 @@
 		</div>
 		<div class="columns">
 			<div class="column">
-				<label>Foto o imagen del producto</label><br>
+				<label>Agregar Imagen del Equipo</label><br>
 				<div class="file is-small has-name">
 				  	<label class="file-label">
 				    	<input class="file-input" type="file" name="producto_foto" accept=".jpg, .png, .jpeg" >
 				    	<span class="file-cta">
-				      		<span class="file-label">Imagen</span>
+				      		<span class="file-label">Presione aqui!</span>
 				    	</span>
-				    	<span class="file-name">JPG, JPEG, PNG. (MAX 3MB)</span>
+				    	<span class="file-name"></span>
 				  	</label>
 				</div>
 			</div>
