@@ -5,15 +5,19 @@
 
 	/*== Almacenando datos ==*/
 	$codigo=limpiar_cadena($_POST['producto_codigo']);
-	$nombre=limpiar_cadena($_POST['producto_nombre']);
+	$marca=limpiar_cadena($_POST['producto_marca']);
 
-	$precio=limpiar_cadena($_POST['producto_precio']);
-	$stock=limpiar_cadena($_POST['producto_stock']);
+	$descripcion=limpiar_cadena($_POST['producto_descripcion']);
+	$cantidad=limpiar_cadena($_POST['producto_cantidad']);
 	$categoria=limpiar_cadena($_POST['producto_categoria']);
+    $estado=limpiar_cadena($_POST['producto_estado']);
+    $observaciones=limpiar_cadena($_POST['producto_observaciones']);
+
+
 
 
 	/*== Verificando campos obligatorios ==*/
-    if($codigo=="" || $nombre=="" || $precio=="" || $stock=="" || $categoria==""){
+    if($codigo=="" || $marca=="" || $descripcion=="" || $cantidad=="" || $categoria==""|| $estado==""|| $observaciones==""){
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
@@ -35,31 +39,50 @@
         exit();
     }
 
-    if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}",$nombre)){
+    if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}",$marca)){
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
-                El NOMBRE no coincide con el formato solicitado
+                La Marca no coincide con el formato solicitado
             </div>
         ';
         exit();
     }
 
-    if(verificar_datos("[0-9.]{1,25}",$precio)){
+    if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}",$descripcion)){
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
-                El PRECIO no coincide con el formato solicitado
+                La Descripcion no coincide con el formato solicitado
             </div>
         ';
         exit();
     }
 
-    if(verificar_datos("[0-9]{1,25}",$stock)){
+    if(verificar_datos("[0-9]{1,25}",$cantidad)){
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
-                El STOCK no coincide con el formato solicitado
+                La Cantidad no coincide con el formato solicitado
+            </div>
+        ';
+        exit();
+    }
+
+    if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}",$estado)){
+        echo '
+            <div class="notification is-danger is-light">
+                <strong>¡Ocurrio un error inesperado!</strong><br>
+                El Estado no coincide con el formato solicitado
+            </div>
+        ';
+        exit();
+    }
+    if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}",$observaciones)){
+        echo '
+            <div class="notification is-danger is-light">
+                <strong>¡Ocurrio un error inesperado!</strong><br>
+                Las Observaciones no coincide con el formato solicitado
             </div>
         ';
         exit();
@@ -82,18 +105,18 @@
 
 
     /*== Verificando nombre ==*/
-    $check_nombre=conexion();
-    $check_nombre=$check_nombre->query("SELECT producto_nombre FROM producto WHERE producto_nombre='$nombre'");
-    if($check_nombre->rowCount()>0){
+    $check_marca=conexion();
+    $check_marca=$check_marca->query("SELECT producto_marca FROM producto WHERE producto_marca='$marca'");
+    if($check_marca->rowCount()>0){
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
-                El NOMBRE ingresado ya se encuentra registrado, por favor elija otro
+                La Marca ingresada ya se encuentra registrado, por favor elija otro
             </div>
         ';
         exit();
     }
-    $check_nombre=null;
+    $check_marca=null;
 
 
     /*== Verificando categoria ==*/
@@ -192,13 +215,15 @@
 
 	/*== Guardando datos ==*/
     $guardar_producto=conexion();
-    $guardar_producto=$guardar_producto->prepare("INSERT INTO producto(producto_codigo,producto_nombre,producto_precio,producto_stock,producto_foto,categoria_id,usuario_id) VALUES(:codigo,:nombre,:precio,:stock,:foto,:categoria,:usuario)");
+    $guardar_producto=$guardar_producto->prepare("INSERT INTO producto(producto_codigo,producto_marca,producto_descripcion,producto_cantidad,producto_estado,producto_observaciones,producto_foto,categoria_id,usuario_id) VALUES(:codigo,:marca,:descripcion,:cantidad,:estado,:observaciones,:foto,:categoria,:usuario)");
 
     $marcadores=[
         ":codigo"=>$codigo,
-        ":nombre"=>$nombre,
-        ":precio"=>$precio,
-        ":stock"=>$stock,
+        ":marca"=>$marca,
+        ":descripcion"=>$descripcion,
+        ":cantidad"=>$cantidad,
+        ":estado"=>$estado,
+        ":observaciones"=>$observaciones,
         ":foto"=>$foto,
         ":categoria"=>$categoria,
         ":usuario"=>$_SESSION['id']
@@ -222,7 +247,7 @@
 
         echo '
             <div class="notification is-danger is-light">
-                <strong>¡Ocurrio un error inesperado!</strong><br>
+                <strong>¡Ocurrio un error!</strong><br>
                 No se pudo registrar el producto, por favor intente nuevamente
             </div>
         ';

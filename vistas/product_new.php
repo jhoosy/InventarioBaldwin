@@ -20,24 +20,36 @@
 		  	</div>
 		  	<div class="column">
 		    	<div class="control">
-					<label>Nombre</label>
-				  	<input class="input" type="text" name="producto_nombre" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}" maxlength="70" required >
+					<label>Marca</label>
+				  	<input class="input" type="text" name="producto_marca" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}" maxlength="70" required >
 				</div>
 		  	</div>
 		</div>
 		<div class="columns">
 		  	<div class="column">
 		    	<div class="control">
-					<label>Precio</label>
-				  	<input class="input" type="text" name="producto_precio" pattern="[0-9.]{1,25}" maxlength="25" required >
+					<label>Descripcion</label>
+				  	<input class="input" type="text" name="producto_descripcion" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}" maxlength="25" required >
 				</div>
 		  	</div>
 		  	<div class="column">
 		    	<div class="control">
-					<label>Stock</label>
-				  	<input class="input" type="text" name="producto_stock" pattern="[0-9]{1,25}" maxlength="25" required >
+					<label>Cantidad</label>
+				  	<input class="input" type="text" name="producto_cantidad" pattern="[0-9]{1,25}" maxlength="25" required >
 				</div>
-		  	</div>
+
+				<div class="column">
+                  <div class="control">
+                  <label>Estado</label>
+                  <select class="input" name="producto_estado" required>
+                <option value="opcion1">Bueno (B)</option>
+                 <option value="opcion2">Regular (R)</option>
+                 <option value="opcion3">Malo (M)</option>
+                 </select>
+                </div>
+              </div>
+
+
 		  	<div class="column">
 				<label>Categoría</label><br>
 		    	<div class="select is-rounded">
@@ -58,6 +70,13 @@
 				</div>
 		  	</div>
 		</div>
+		<div class="columns">
+		  	<div class="column">
+		    	<div class="control">
+					<label>Observaciones</label>
+				  	<input class="input" type="text" name="producto_observaciones" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}" maxlength="25" required >
+				</div>
+		  	</div>
 		<div class="columns">
 			<div class="column">
 				<label>Agregar Imagen del Equipo</label><br>

@@ -24,16 +24,18 @@
 
 
     /*== Almacenando datos ==*/
-    $codigo=limpiar_cadena($_POST['producto_codigo']);
-	$nombre=limpiar_cadena($_POST['producto_nombre']);
-
-	$precio=limpiar_cadena($_POST['producto_precio']);
-	$stock=limpiar_cadena($_POST['producto_stock']);
-	$categoria=limpiar_cadena($_POST['producto_categoria']);
+    $codigo=limpiar_cadena($_POST['producto_codigo']);/*$codigo */
+	$marca=limpiar_cadena($_POST['producto_marca']); /*$nombre nombre*/
+    
+	$descripcion=limpiar_cadena($_POST['producto_descripcion']);/*$precio */
+	$cantidad=limpiar_cadena($_POST['producto_cantidad']);/*$stock */
+	$categoria=limpiar_cadena($_POST['producto_categoria']);/*$categoria */
+    $estado=limpiar_cadena($_POST['producto_estado']);/*new */
+    $observaciones=limpiar_cadena($_POST['producto_observaciones']);/*new*/
 
 
 	/*== Verificando campos obligatorios ==*/
-    if($codigo=="" || $nombre=="" || $precio=="" || $stock=="" || $categoria==""){
+    if($codigo=="" || $marca=="" || $descripcion || $cantidad=="" || $categoria=="" || $estado=="" || $observaciones==""){
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
@@ -55,7 +57,7 @@
         exit();
     }
 
-    if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}",$nombre)){
+    if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}",$marca)){
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
@@ -64,8 +66,18 @@
         ';
         exit();
     }
-
-    if(verificar_datos("[0-9.]{1,25}",$precio)){
+     
+    if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}",$descripcion)){
+        echo '
+            <div class="notification is-danger is-light">
+                <strong>¡Ocurrio un error inesperado!</strong><br>
+                El PRECIO no coincide con el formato solicitado
+            </div>
+        ';
+        exit();
+    }
+     
+    if(verificar_datos("[0-9.]{1,25}",$cantidad)){
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
@@ -75,16 +87,26 @@
         exit();
     }
 
-    if(verificar_datos("[0-9]{1,25}",$stock)){
+
+    if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}",$estado)){
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
-                El STOCK no coincide con el formato solicitado
+                El PRECIO no coincide con el formato solicitado
             </div>
         ';
         exit();
     }
 
+    if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}",$observaciones)){  
+        echo '
+            <div class="notification is-danger is-light">
+                <strong>¡Ocurrio un error inesperado!</strong><br>
+                El PRECIO no coincide con el formato solicitado
+            </div>
+        ';
+        exit();
+    }
 
     /*== Verificando codigo ==*/
     if($codigo!=$datos['producto_codigo']){
@@ -104,10 +126,10 @@
 
 
     /*== Verificando nombre ==*/
-    if($nombre!=$datos['producto_nombre']){
-	    $check_nombre=conexion();
-	    $check_nombre=$check_nombre->query("SELECT producto_nombre FROM producto WHERE producto_nombre='$nombre'");
-	    if($check_nombre->rowCount()>0){
+    if($marca!=$datos['producto_marca']){
+	    $check_marca=conexion();
+	    $check_marca=$check_marca->query("SELECT producto_marca FROM producto WHERE producto_marca='$marca'");
+	    if($check_marca->rowCount()>0){
 	        echo '
 	            <div class="notification is-danger is-light">
 	                <strong>¡Ocurrio un error inesperado!</strong><br>
@@ -116,7 +138,7 @@
 	        ';
 	        exit();
 	    }
-	    $check_nombre=null;
+	    $check_marca=null;
     }
 
 
@@ -139,14 +161,16 @@
 
     /*== Actualizando datos ==*/
     $actualizar_producto=conexion();
-    $actualizar_producto=$actualizar_producto->prepare("UPDATE producto SET producto_codigo=:codigo,producto_nombre=:nombre,producto_precio=:precio,producto_stock=:stock,categoria_id=:categoria WHERE producto_id=:id");
+    $actualizar_producto=$actualizar_producto->prepare("UPDATE producto SET producto_codigo=:codigo,producto_marca=:marca,producto_descripcion=:descripcion,producto_cantidad=:cantidad,categoria_id=:categoria,producto_estado=:estado,producto_observaciones=:observaciones  WHERE producto_id=:id");
 
     $marcadores=[
         ":codigo"=>$codigo,
-        ":nombre"=>$nombre,
-        ":precio"=>$precio,
-        ":stock"=>$stock,
+        ":marca"=>$marca,
+        ":descripcion"=>$descripcion,
+        ":cantidad"=>$cantidad,
         ":categoria"=>$categoria,
+        ":estado"=>$estado,
+        ":observaciones"=>$observaciones,
         ":id"=>$id
     ];
 

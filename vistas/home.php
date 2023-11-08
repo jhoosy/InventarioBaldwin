@@ -41,7 +41,7 @@
       <div class="col-lg-4 col-6">
         <div class="small-box bg-success">
           <div class="inner">
-            <h3><span id="productosCount">0</span></h3>
+            <h3 span id="productosCount">0</h3>
             <h4>EQUIPOS</h4>
           </div>
           <div class="icon">

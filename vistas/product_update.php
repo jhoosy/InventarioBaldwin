@@ -22,7 +22,7 @@
 
 	<div class="form-rest mb-6 mt-6"></div>
 	
-	<h2 class="title has-text-centered"><?php echo $datos['producto_nombre']; ?></h2>
+	<h2 class="title has-text-centered"><?php echo $datos['producto_marca']; ?></h2>
 
 	<form action="./php/producto_actualizar.php" method="POST" class="FormularioAjax" autocomplete="off" >
 
@@ -32,29 +32,48 @@
 		  	<div class="column">
 		    	<div class="control">
 					<label>Código de barra</label>
-				  	<input class="input" type="text" name="producto_codigo" pattern="[a-zA-Z0-9- ]{1,70}" maxlength="70" required value="<?php echo $datos['producto_codigo']; ?>" >
+				  	<input class="input" type="text" name="producto_codigo" pattern="[a-zA-Z0-9- ]{1,70}" maxlength="70" required >
 				</div>
 		  	</div>
 		  	<div class="column">
 		    	<div class="control">
-					<label>Nombre</label>
-				  	<input class="input" type="text" name="producto_nombre" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}" maxlength="70" required value="<?php echo $datos['producto_nombre']; ?>" >
+					<label>Marca</label>
+				  	<input class="input" type="text" name="producto_marca" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}" maxlength="70" required >
 				</div>
 		  	</div>
 		</div>
 		<div class="columns">
 		  	<div class="column">
 		    	<div class="control">
-					<label>Precio</label>
-				  	<input class="input" type="text" name="producto_precio" pattern="[0-9.]{1,25}" maxlength="25" required value="<?php echo $datos['producto_precio']; ?>" >
+					<label>Descripcion</label>
+				  	<input class="input" type="text" name="producto_descripcion" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}" maxlength="25" required >
 				</div>
 		  	</div>
 		  	<div class="column">
 		    	<div class="control">
-					<label>Stock</label>
-				  	<input class="input" type="text" name="producto_stock" pattern="[0-9]{1,25}" maxlength="25" required value="<?php echo $datos['producto_stock']; ?>" >
+					<label>Cantidad</label>
+				  	<input class="input" type="text" name="producto_cantidad" pattern="[0-9]{1,25}" maxlength="25" required >
+				</div>
+
+				<div class="column">
+                  <div class="control">
+                  <label>Estado</label>
+                  <select class="input" name="producto_estado" required>
+                <option value="opcion1">Bueno (B)</option>
+                 <option value="opcion2">Regular (R)</option>
+                 <option value="opcion3">Malo (M)</option>
+                 </select>
+                </div>
+              </div>
+             
+			  <div class="columns">
+		  	<div class="column">
+		    	<div class="control">
+					<label>Observaciones</label>
+				  	<input class="input" type="text" name="producto_observaciones" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}" maxlength="25" required >
 				</div>
 		  	</div>
+			
 		  	<div class="column">
 				<label>Categoría</label><br>
 		    	<div class="select is-rounded">
@@ -77,6 +96,7 @@
 				  	</select>
 				</div>
 		  	</div>
+
 		</div>
 		<p class="has-text-centered">
 			<button type="submit" class="button is-success is-rounded">Actualizar</button>
