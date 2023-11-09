@@ -37,7 +37,7 @@
 			</form>
 			<?php }else{ ?>
 			<figure class="image mb-6">
-			  	<img src="./img/producto.png">
+			  	<img src="./img/retoda.jpg">
 			</figure>
 			<?php } ?>
 		</div>

@@ -34,7 +34,7 @@
                 	<th>#</th>
                     <th>Nombre</th>
                     <th>Ubicación</th>
-                    <th>Productos</th>
+                    <th>Equipos</th>
                     <th colspan="2">Opciones</th>
                 </tr>
             </thead>

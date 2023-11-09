@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "pdo";
+$dbname = "datab";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
