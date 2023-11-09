@@ -186,5 +186,51 @@ body,html{
 
 
 
+.form-column {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.form-control {
+  margin-bottom: 1em;
+}
+
+.inputBarra,
+.inputMarca,
+.inputDesc,
+.inputCan,
+.inputEsta,
+.inputObse {
+  box-sizing: border-box;
+  padding: 0.5em;
+  font-size: 18px;
+  width: 100%;
+  height: 40px;
+}
+
+.select.is-rounded {
+  width: 28%;
+  box-sizing: border-box;
+  padding: 0.5em;
+  font-size: 18px;
+}
+
+.file.is-small.has-name {
+  margin-bottom: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   

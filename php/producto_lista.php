@@ -54,7 +54,7 @@
 			            <div class="content">
 			              <p>
 			                <strong>'.$contador.' - '.$rows['producto_marca'].'</strong><br>
-			                <strong>CODIGO:</strong> '.$rows['producto_codigo'].', <strong>DESCRIPCION:</strong> S/.'.$rows['producto_descripcion'].', <strong>CANTIDAD:</strong> '.$rows['producto_cantidad'].', <strong>CATEGORIA:</strong> '.$rows['categoria_nombre'].', <strong>REGISTRADO POR:</strong> '.$rows['usuario_nombre'].' '.$rows['usuario_apellido'].'
+			                <strong>CODIGO:</strong> '.$rows['producto_codigo'].', <strong>DESCRIPCION:</strong> '.$rows['producto_descripcion'].', <strong>CANTIDAD:</strong> '.$rows['producto_cantidad'].', <strong>CATEGORIA:</strong> '.$rows['categoria_nombre'].', <strong>REGISTRADO POR:</strong> '.$rows['usuario_nombre'].' '.$rows['usuario_apellido'].'
 			              </p>
 			            </div>
 			            <div class="has-text-right">
