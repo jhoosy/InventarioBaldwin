@@ -182,6 +182,30 @@ body,html{
   background-color: #ffffff;
 }
 
+.button.is-info-is-rounded{
+background-color: #146809;
+
+}
+
+.btnGuardar {
+  /* Estilos para el botón de guardar */
+  background-color: #065f03; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Relleno interno */
+  text-align: center; /* Alineación del texto */
+  text-decoration: none; /* Sin subrayado de enlace */
+  display: inline-block; /* Mostrar como un elemento en línea */
+  font-size: 16px; /* Tamaño de fuente */
+  margin: 4px 2px; /* Márgenes superior e inferior de 4px y márgenes izquierdo y derecho de 2px */
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  border-radius: 8px; /* Borde redondeado */
+}
+
+.btnGuardar:hover {
+  background-color: #0e330d; /* Cambia el color de fondo al pasar el ratón por encima */
+}
+
 
 
 

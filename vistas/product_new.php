@@ -13,7 +13,7 @@
 	<form action="./php/producto_guardar.php" method="POST" class="FormularioAjax" autocomplete="off" enctype="multipart/form-data">
   <div class="form-column">
     <div class="form-control">
-      <label>Código de barra</label>
+      <label>Código de barras</label>
       <input class="inputBarra" type="text" name="producto_codigo" pattern="[a-zA-Z0-9- ]{1,70}" maxlength="70" required>
     </div>
   </div>
@@ -21,14 +21,14 @@
   <div class="form-column">
     <div class="form-control">
       <label>Marca</label>
-      <input class="inputMarca" type="text" name="producto_marca" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}" maxlength="70" required>
+      <input class="inputMarca" type="text" name="producto_marca" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}" maxlength="30" required>
     </div>
   </div>
 
   <div class="form-column">
     <div class="form-control">
       <label>Descripcion</label>
-      <input class="inputDesc" type="text" name="producto_descripcion" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}" maxlength="25" required>
+      <input class="inputDesc" type="text" name="producto_descripcion" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}" maxlength="100" required>
     </div>
   </div>
 
@@ -73,7 +73,7 @@
   <div class="form-column">
     <div class="form-control">
       <label>Observaciones</label>
-      <input class="inputObse" type="text" name="producto_observaciones" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}" maxlength="25" required>
+      <input class="inputObse" type="text" name="producto_observaciones" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}" maxlength="100" required>
     </div>
   </div>
 
@@ -91,7 +91,7 @@
   </div>
 
   <p class="has-text-centered">
-    <button type="submit" class="button is-info is-rounded">Guardar</button>
+    <button type="submit" class="btnGuardar">Guardar</button>
   </p>
  </form>
 </div>
