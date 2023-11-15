@@ -3,7 +3,7 @@
     <h2 class="subtitle">Lista de equipos</h2>
 </div>
 
-<a href="./php/pdf.php" class="btnPDF">Descargar PDFs</a>
+<a href="./php/pdf.php" class="btnPDF">Descargar PDF</a>
 <div class="container pb-6 pt-6">
     <?php
         require_once "./php/main.php";
