@@ -36,12 +36,17 @@ use Dompdf\Options;
 $options = new Options();
 $options->set('isHtml5ParserEnabled', true);
 $options->set('isPhpEnabled', true);
+$options->set(array('isRemoteEnabled'=> true));
 $dompdf = new Dompdf($options);
 
 // Contenido HTML para el PDF
-$html = '<html><body>';
+$html = '<html><body>';// Ajusta la ruta y estilos del logo
 $html .= '<h1 style="text-align: center;">Lista de Equipos</h1>';
+$html .= '<img src="https://baldwin.edu.pe/wp-content/uploads/2020/10/LOGO-ESCUDO-BALDWIN-PNG-1-150x150.png" alt="Imagen remota" style="width: 80px; opacity: 0.5; margin-top: -80px;"><br><br>';
 $html .= '<table style="border-collapse: collapse; width: 100%;">
+
+
+
             <thead>
                 <tr style="background-color: #f2f2f2;">
                     <th style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Codigo:</th>
@@ -52,6 +57,8 @@ $html .= '<table style="border-collapse: collapse; width: 100%;">
                 </tr>
             </thead>
             <tbody>';
+
+            
 
 // Iterar sobre los resultados de la consulta
 while ($fila = $resultado->fetch_assoc()) {
