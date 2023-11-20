@@ -27,20 +27,20 @@ if (!$resultado) {
 
 //----------------------------------------------------------//
 
-require '../vendor/autoload.php'; // Asegúrate de cargar DOMPDF
+require '../vendor/autoload.php'; // LIBRERIA DOMPDF - MI PDF
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
-// Crear una instancia de Dompdf
+// 
 $options = new Options();
 $options->set('isHtml5ParserEnabled', true);
 $options->set('isPhpEnabled', true);
 $options->set(array('isRemoteEnabled'=> true));
 $dompdf = new Dompdf($options);
 
-// Contenido HTML para el PDF
-$html = '<html><body>';// Ajusta la ruta y estilos del logo
+// Contenido de mi PDF
+$html = '<html><body>';
 $html .= '<h1 style="text-align: center;">Lista de Equipos</h1>';
 $html .= '<img src="https://baldwin.edu.pe/wp-content/uploads/2020/10/LOGO-ESCUDO-BALDWIN-PNG-1-150x150.png" alt="Imagen remota" style="width: 80px; opacity: 0.5; margin-top: -80px;"><br><br>';
 $html .= '<table style="border-collapse: collapse; width: 100%;">
@@ -60,7 +60,7 @@ $html .= '<table style="border-collapse: collapse; width: 100%;">
 
             
 
-// Iterar sobre los resultados de la consulta
+// Resultado de mis Consultas
 while ($fila = $resultado->fetch_assoc()) {
     $html .= '<tr>';
     $html .= '<td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">' . $fila['producto_codigo'] . '</td>';
