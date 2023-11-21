@@ -88,7 +88,7 @@ body{
 
 .login input[type=text]{
 	width: 250px;
-	height: 30px;
+	height: 35px;
 	background: transparent;
 	border: 1px solid rgba(255,255,255,0.6);
 	border-radius: 2px;
@@ -101,7 +101,7 @@ body{
 
 .login input[type=password]{
 	width: 250px;
-	height: 30px;
+	height: 35px;
 	background: transparent;
 	border: 1px solid rgba(255,255,255,0.6);
 	border-radius: 2px;
@@ -114,13 +114,13 @@ body{
 }
 
 .login input[class=button]{
-	width: 260px;
+	width: 250px;
 	height: 35px;
-	background: #fff;
+	background: rgb(8, 95, 44);
 	border: 1px solid #fff;
 	cursor: pointer;
 	border-radius: 2px;
-	color: #a18d6c;
+	color: #ffffff;
 	font-family: 'Exo', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
@@ -159,9 +159,6 @@ body{
 .login input[type=button]:focus{
 	outline: none;
 }
-
-
-
 
 ::placeholder {
     color:darkgreen;

@@ -31,7 +31,7 @@ body,html{
 
 /* Estilos para el contenedor de las cajas pequeñas */
 .container-fluid {
-	padding: 60px; /* Ajusta el espaciado según tus necesidades */
+	padding: 70px; /* Ajusta el espaciado según tus necesidades */
 	background-color: rgb(245, 247, 245);
   }
   
@@ -72,18 +72,21 @@ body,html{
   
   /* Estilos para los colores de fondo de las cajas pequeñas */
   .bg-info {
-	background-color: #6d12e6; /* Color de fondo azul claro */
-	color: #fff; /* Color de texto blanco o claro */
+	background-color: #ffffff; /* Color de fondo azul claro */
+	color: #dd2909; /* Color de texto blanco o claro */
+  border-color: #146809;
   }
   
   .bg-primary {
-	background-color: #ca580c; /* Color de fondo naranja */
-	color: #fff; /* Color de texto blanco o claro */
+	background-color: #ffffff; /* Color de fondo naranja */
+	color: #dd2909; /* Color de texto blanco o claro */
+  border-color: #146809;
   }
   
   .bg-success {
-	background-color: #d4bb2b; /* Color de fondo verde */
-	color: #fff; /* Color de texto blanco o claro */
+	background-color: #ffffff; /* Color de fondo verde */
+	color: #dd2909; /* Color de texto blanco o claro */
+  border-color: #146809;
   }
   
   .bg-danger {
