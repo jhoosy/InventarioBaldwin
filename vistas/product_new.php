@@ -43,9 +43,9 @@
     <div class="form-control">
       <label>Estado</label>
       <select class="inputEsta" name="producto_estado" required>
-        <option value="opcion1">Bueno (B)</option>
-        <option value="opcion2">Regular (R)</option>
-        <option value="opcion3">Malo (M)</option>
+        <option value="B">Bueno (B)</option>
+        <option value="R">Regular (R)</option>
+        <option value="M">Malo (M)</option>
       </select>
     </div>
   </div>
