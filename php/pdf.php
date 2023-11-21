@@ -47,7 +47,7 @@ $lugar= 'Jr. Huancané 520, Juliaca 21101';
 $fechaInforme = date('d/m/Y'); // Puedes ajustar el formato según tus preferencias
 // Contenido de mi PDF
 $html = '<html><body>';
-$html .= '<h2 style="text-align: center; color: black">'.$titulo.'</h2>';
+$html .= '<br><h2 style="text-align: center; color: black">'.$titulo.'</h2>';
 $html .= '<h4 style="text-align: left;">'.$nameEmpresa.'</h4>';
 $html .= '<p style="text-align: left;">RUC: '.$ruc.'</p>';
 $html .= '<p style="text-align: left;">'.$lugar.'</p>';
@@ -55,7 +55,7 @@ $html .= '<p style="text-align: left;">'.$lugar.'</p>';
 $html .= '<p style="text-align: right;margin-top: -80px;">'.$fechaInforme.'</p>';
 
 
-$html .= '<div style="position: absolute; top: 0; right: 0; margin: 10px;">';
+$html .= '<div style="position: absolute; top: 0; left: 0; margin: 2px;">';
 $html .= '<img src="https://baldwin.edu.pe/wp-content/uploads/2020/10/LOGO-ESCUDO-BALDWIN-PNG-1-150x150.png" alt="Imagen remota" style="width: 80px; opacity: 0.5;">';
 $html .= '</div>';
 
@@ -68,6 +68,7 @@ $html .= '<th style="border: 1px solid #dddddd; text-align: left; padding: 8px; 
 $html .= '<th style="border: 1px solid #dddddd; text-align: left; padding: 8px; color: #E2F0E2;">Marca:</th>';
 $html .= '<th style="border: 1px solid #dddddd; text-align: left; padding: 8px; color: #E2F0E2;">Descripcion:</th>';
 $html .= '<th style="border: 1px solid #dddddd; text-align: left; padding: 8px; color: #E2F0E2;">Cantidad:</th>';
+$html .= '<th style="border: 1px solid #dddddd; text-align: left; padding: 8px; color: #E2F0E2;">Sede:</th>';
 $html .= '<th style="border: 1px solid #dddddd; text-align: left; padding: 8px; color: #E2F0E2;">Estado:</th>';
 $html .= '<th style="border: 1px solid #dddddd; text-align: left; padding: 8px; color: #E2F0E2;">Observaciones:</th>';
 $html .= '</tr>';
@@ -81,6 +82,7 @@ while ($fila = $resultado->fetch_assoc()) {
     $html .= '<td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">' . $fila['producto_marca'] . '</td>';
     $html .= '<td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">' . $fila['producto_descripcion'] . '</td>';
     $html .= '<td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">' . $fila['producto_cantidad'] . '</td>';
+    $html .= '<td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">' . $fila['producto_sede'] . '</td>';
     $html .= '<td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">' . $fila['producto_estado'] . '</td>';
     $html .= '<td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">' . $fila['producto_observaciones'] . '</td>';
     $html .= '</tr>';

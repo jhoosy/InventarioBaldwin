@@ -9,6 +9,7 @@
 
 	$descripcion=limpiar_cadena($_POST['producto_descripcion']);
 	$cantidad=limpiar_cadena($_POST['producto_cantidad']);
+    $sede=limpiar_cadena($_POST['producto_sede']);
 	$categoria=limpiar_cadena($_POST['producto_categoria']);
     $estado=limpiar_cadena($_POST['producto_estado']);
     $observaciones=limpiar_cadena($_POST['producto_observaciones']);
@@ -17,7 +18,7 @@
 
 
 	/*== Verificando campos obligatorios ==*/
-    if($codigo=="" || $marca=="" || $descripcion=="" || $cantidad=="" || $categoria==""|| $estado==""|| $observaciones==""){
+    if($codigo=="" || $marca=="" || $descripcion=="" || $cantidad=="" || $sede=="" || $categoria==""|| $estado==""|| $observaciones==""){
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
@@ -74,6 +75,15 @@
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
                 El Estado no coincide con el formato solicitado
+            </div>
+        ';
+        exit();
+    }
+    if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}",$sede)){
+        echo '
+            <div class="notification is-danger is-light">
+                <strong>¡Ocurrio un error inesperado!</strong><br>
+                La sede no coincide con el formato solicitado
             </div>
         ';
         exit();
@@ -215,13 +225,14 @@
 
 	/*== Guardando datos ==*/
     $guardar_producto=conexion();
-    $guardar_producto=$guardar_producto->prepare("INSERT INTO producto(producto_codigo,producto_marca,producto_descripcion,producto_cantidad,producto_estado,producto_observaciones,producto_foto,categoria_id,usuario_id) VALUES(:codigo,:marca,:descripcion,:cantidad,:estado,:observaciones,:foto,:categoria,:usuario)");
+    $guardar_producto=$guardar_producto->prepare("INSERT INTO producto(producto_codigo,producto_marca,producto_descripcion,producto_cantidad,producto_sede,producto_estado,producto_observaciones,producto_foto,categoria_id,usuario_id) VALUES(:codigo,:marca,:descripcion,:cantidad,:sede,:estado,:observaciones,:foto,:categoria,:usuario)");
 
     $marcadores=[
         ":codigo"=>$codigo,
         ":marca"=>$marca,
         ":descripcion"=>$descripcion,
         ":cantidad"=>$cantidad,
+        ":sede"=>$sede,
         ":estado"=>$estado,
         ":observaciones"=>$observaciones,
         ":foto"=>$foto,

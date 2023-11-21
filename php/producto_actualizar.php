@@ -29,13 +29,14 @@
     
 	$descripcion=limpiar_cadena($_POST['producto_descripcion']);/*$precio */
 	$cantidad=limpiar_cadena($_POST['producto_cantidad']);/*$stock */
+    $sede=limpiar_cadena($_POST['producto_sede']);/*$stock */
 	$categoria=limpiar_cadena($_POST['producto_categoria']);/*$categoria */
     $estado=limpiar_cadena($_POST['producto_estado']);/*new */
     $observaciones=limpiar_cadena($_POST['producto_observaciones']);/*new*/
 
 
 	/*== Verificando campos obligatorios ==*/
-    if($codigo=="" || $marca=="" || $descripcion || $cantidad=="" || $categoria=="" || $estado=="" || $observaciones==""){
+    if($codigo=="" || $marca=="" || $descripcion || $cantidad=="" || $sede=="" || $categoria=="" || $estado=="" || $observaciones==""){
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
@@ -61,7 +62,7 @@
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
-                El NOMBRE no coincide con el formato solicitado
+                La marca no coincide con el formato solicitado
             </div>
         ';
         exit();
@@ -71,7 +72,7 @@
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
-                El PRECIO no coincide con el formato solicitado
+                La descipcion no coincide con el formato solicitado
             </div>
         ';
         exit();
@@ -81,7 +82,7 @@
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
-                El PRECIO no coincide con el formato solicitado
+                La cantidad no coincide con el formato solicitado
             </div>
         ';
         exit();
@@ -92,7 +93,17 @@
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
-                El PRECIO no coincide con el formato solicitado
+                El estado no coincide con el formato solicitado
+            </div>
+        ';
+        exit();
+    }
+ 
+    if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}",$sede)){
+        echo '
+            <div class="notification is-danger is-light">
+                <strong>¡Ocurrio un error inesperado!</strong><br>
+                La sede no coincide con el formato solicitado
             </div>
         ';
         exit();
@@ -102,7 +113,7 @@
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
-                El PRECIO no coincide con el formato solicitado
+                El formato no coincide con el formato solicitado
             </div>
         ';
         exit();
@@ -125,22 +136,6 @@
     }
 
 
-    /*== Verificando nombre ==*/
-    if($marca!=$datos['producto_marca']){
-	    $check_marca=conexion();
-	    $check_marca=$check_marca->query("SELECT producto_marca FROM producto WHERE producto_marca='$marca'");
-	    if($check_marca->rowCount()>0){
-	        echo '
-	            <div class="notification is-danger is-light">
-	                <strong>¡Ocurrio un error inesperado!</strong><br>
-	                El NOMBRE ingresado ya se encuentra registrado, por favor elija otro
-	            </div>
-	        ';
-	        exit();
-	    }
-	    $check_marca=null;
-    }
-
 
     /*== Verificando categoria ==*/
     if($categoria!=$datos['categoria_id']){
@@ -161,7 +156,7 @@
 
     /*== Actualizando datos ==*/
     $actualizar_producto=conexion();
-    $actualizar_producto=$actualizar_producto->prepare("UPDATE producto SET producto_codigo=:codigo,producto_marca=:marca,producto_descripcion=:descripcion,producto_cantidad=:cantidad,categoria_id=:categoria,producto_estado=:estado,producto_observaciones=:observaciones  WHERE producto_id=:id");
+    $actualizar_producto=$actualizar_producto->prepare("UPDATE producto SET producto_codigo=:codigo,producto_marca=:marca,producto_descripcion=:descripcion,producto_cantidad=:cantidad,categoria_id=:categoria,producto_estado=:estado,producto_sede=:sede,producto_observaciones=:observaciones  WHERE producto_id=:id");
 
     $marcadores=[
         ":codigo"=>$codigo,
@@ -169,6 +164,7 @@
         ":descripcion"=>$descripcion,
         ":cantidad"=>$cantidad,
         ":categoria"=>$categoria,
+        ":sede"=>$sede,
         ":estado"=>$estado,
         ":observaciones"=>$observaciones,
         ":id"=>$id

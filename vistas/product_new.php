@@ -41,6 +41,17 @@
 
   <div class="form-column">
     <div class="form-control">
+      <label>Sede</label>
+      <select class="inputEsta" name="producto_sede" required>
+        <option value="PUNO">PUNO</option>
+        <option value="JULIACA">JULIACA</option>
+        
+      </select>
+    </div>
+  </div>
+
+  <div class="form-column">
+    <div class="form-control">
       <label>Estado</label>
       <select class="inputEsta" name="producto_estado" required>
         <option value="B">Bueno (B)</option>
@@ -72,10 +83,10 @@
 
   <div class="form-column">
     <div class="form-control">
-      <label>Observaciones</label>
-      <input class="inputObse" type="text" name="producto_observaciones" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}" maxlength="100" required>
+        <label>Observaciones</label>
+        <input class="inputObse" type="text" name="producto_observaciones" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,70}" maxlength="100" required value="Sin Observaciones">
     </div>
-  </div>
+</div>
 
   <div class="form-column">
     <label>Agregar Imagen del Equipo</label><br>

@@ -3,7 +3,7 @@
 	$tabla="";
 
 	
-    $campos="producto.producto_id,producto.producto_codigo,producto.producto_marca,producto.producto_descripcion,producto.producto_cantidad,producto.producto_estado,producto.producto_observaciones,producto.producto_foto,producto.categoria_id,producto.usuario_id,categoria.categoria_id,categoria.categoria_nombre,usuario.usuario_id,usuario.usuario_nombre,usuario.usuario_apellido";
+    $campos="producto.producto_id,producto.producto_codigo,producto.producto_marca,producto.producto_descripcion,producto.producto_cantidad,producto.producto_sede,producto.producto_estado,producto.producto_observaciones,producto.producto_foto,producto.categoria_id,producto.usuario_id,categoria.categoria_id,categoria.categoria_nombre,usuario.usuario_id,usuario.usuario_nombre,usuario.usuario_apellido";
 
 	if(isset($busqueda) && $busqueda!=""){
 
@@ -54,7 +54,7 @@
 			            <div class="content">
 			              <p>
 			                <strong>'.$contador.' - '.$rows['producto_marca'].'</strong><br>
-			                <strong>CODIGO:</strong> '.$rows['producto_codigo'].', <strong>DESCRIPCION:</strong> '.$rows['producto_descripcion'].', <strong>CANTIDAD:</strong> '.$rows['producto_cantidad'].', <strong>CATEGORIA:</strong> '.$rows['categoria_nombre'].', <strong>REGISTRADO POR:</strong> '.$rows['usuario_nombre'].'
+			                <strong>CODIGO:</strong> '.$rows['producto_codigo'].', <strong>DESCRIPCION:</strong> '.$rows['producto_descripcion'].', <strong>CANTIDAD:</strong> '.$rows['producto_cantidad'].', <strong>SEDE:</strong> '.$rows['producto_sede'].', <strong>CATEGORIA:</strong> '.$rows['categoria_nombre'].', <strong>REGISTRADO POR:</strong> '.$rows['usuario_nombre'].'
 			              </p>
 			            </div>
 			            <div class="has-text-right">

@@ -52,6 +52,7 @@ CREATE TABLE `producto` (
   `producto_marca` varchar(50) DEFAULT NULL,
   `producto_descripcion` varchar(100) DEFAULT NULL,
   `producto_cantidad` int(20) DEFAULT NULL,
+  `producto_sede` varchar(15) DEFAULT NULL,
   `producto_estado` varchar(15) DEFAULT NULL,
   `producto_observaciones` varchar(100) DEFAULT NULL,
   `producto_foto` varchar(500) DEFAULT NULL,
@@ -63,7 +64,7 @@ CREATE TABLE `producto` (
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`producto_id`, `producto_codigo`, `producto_marca`, `producto_descripcion`, `producto_cantidad`, `producto_estado`, `producto_observaciones`, `producto_foto`, `usuario_id`, `categoria_id`) VALUES
+INSERT INTO `producto` (`producto_id`, `producto_codigo`, `producto_marca`, `producto_descripcion`, `producto_cantidad`, `producto_sede`, `producto_estado`, `producto_observaciones`, `producto_foto`, `usuario_id`, `categoria_id`) VALUES
 (1, '0001', 'LENOVO', 'Color Negro', 1, 'opcion2', 'sin Observaciones', '', 1, 1),
 (2, '0002', 'TEROS', 'Color Gris', 1, 'opcion3', 'Sin Observciones', '', 1, 1);
 
