@@ -1,6 +1,6 @@
 <div class="container is-fluid mb-6">
-	<h1 class="title">Categorías</h1>
-	<h2 class="subtitle">Nueva categoría</h2>
+	<h1 class="title">Área</h1>
+	<h2 class="subtitle">Nuevo Área</h2>
 </div>
 
 <div class="container pb-6 pt-6">
@@ -12,13 +12,13 @@
 		  	<div class="column">
 		    	<div class="control">
 					<label>Nombre</label>
-				  	<input class="input" type="text" name="categoria_nombre" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{4,50}" maxlength="50" required >
+				  	<input class="input" type="text" name="categoria_nombre"  maxlength="50" required >
 				</div>
 		  	</div>
 		  	<div class="column">
 		    	<div class="control">
 					<label>Ubicación</label>
-				  	<input class="input" type="text" name="categoria_ubicacion" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{5,150}" maxlength="150" >
+				  	<input class="input" type="text" name="categoria_ubicacion"  maxlength="150" required >
 				</div>
 		  	</div>
 		</div>

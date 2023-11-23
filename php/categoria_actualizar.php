@@ -13,7 +13,7 @@
     	echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
-                La categoría no existe en el sistema
+                El Área no existe en el sistema
             </div>
         ';
         exit();
@@ -40,27 +40,7 @@
 
 
     /*== Verificando integridad de los datos ==*/
-    if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{4,50}",$nombre)){
-        echo '
-            <div class="notification is-danger is-light">
-                <strong>¡Ocurrio un error inesperado!</strong><br>
-                El NOMBRE no coincide con el formato solicitado
-            </div>
-        ';
-        exit();
-    }
-
-    if($ubicacion!=""){
-    	if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{5,150}",$ubicacion)){
-	        echo '
-	            <div class="notification is-danger is-light">
-	                <strong>¡Ocurrio un error inesperado!</strong><br>
-	                La UBICACION no coincide con el formato solicitado
-	            </div>
-	        ';
-	        exit();
-	    }
-    }
+  
 
 
     /*== Verificando nombre ==*/
@@ -93,15 +73,15 @@
     if($actualizar_categoria->execute($marcadores)){
         echo '
             <div class="notification is-info is-light">
-                <strong>¡CATEGORIA ACTUALIZADA!</strong><br>
-                La categoría se actualizo con exito
+                <strong>¡ÁREA ACTUALIZADA!</strong><br>
+                El area se actualizo con exito
             </div>
         ';
     }else{
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
-                No se pudo actualizar la categoría, por favor intente nuevamente
+                No se pudo actualizar el Área, por favor intente nuevamente
             </div>
         ';
     }

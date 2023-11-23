@@ -62,7 +62,7 @@
   </div>
 
   <div class="form-column">
-    <label>Categoría</label><br>
+    <label>Área</label><br>
     <div class="select is-rounded">
       <select name="producto_categoria">
         <option value="" selected>Seleccione una opción</option>

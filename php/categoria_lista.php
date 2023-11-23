@@ -32,7 +32,7 @@
             <thead>
                 <tr class="has-text-centered">
                 	<th>#</th>
-                    <th>Nombre</th>
+                    <th>Área</th>
                     <th>Ubicación</th>
                     <th>Equipos</th>
                     <th colspan="2">Opciones</th>
@@ -51,7 +51,7 @@
                     <td>'.$rows['categoria_nombre'].'</td>
                     <td>'.substr($rows['categoria_ubicacion'],0,25).'</td>
                     <td>
-                        <a href="index.php?vista=product_category&category_id='.$rows['categoria_id'].'" class="button is-link is-rounded is-small">Ver productos</a>
+                        <a href="index.php?vista=product_category&category_id='.$rows['categoria_id'].'" class="button is-link is-rounded is-small">Ver equipos</a>
                     </td>
                     <td>
                         <a href="index.php?vista=category_update&category_id_up='.$rows['categoria_id'].'" class="button is-success is-rounded is-small">Actualizar</a>
@@ -79,7 +79,7 @@
 			$tabla.='
 				<tr class="has-text-centered" >
 					<td colspan="5">
-						No hay registros en el sistema
+						No hay registros en el inventario
 					</td>
 				</tr>
 			';

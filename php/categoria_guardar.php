@@ -18,28 +18,7 @@
     }
 
 
-    /*== Verificando integridad de los datos ==*/
-    if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{4,50}",$nombre)){
-        echo '
-            <div class="notification is-danger is-light">
-                <strong>¡Ocurrio un error inesperado!</strong><br>
-                El NOMBRE no coincide con el formato solicitado
-            </div>
-        ';
-        exit();
-    }
-
-    if($ubicacion!=""){
-    	if(verificar_datos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{5,150}",$ubicacion)){
-	        echo '
-	            <div class="notification is-danger is-light">
-	                <strong>¡Ocurrio un error inesperado!</strong><br>
-	                La UBICACION no coincide con el formato solicitado
-	            </div>
-	        ';
-	        exit();
-	    }
-    }
+   
 
 
     /*== Verificando nombre ==*/
@@ -71,15 +50,15 @@
     if($guardar_categoria->rowCount()==1){
         echo '
             <div class="notification is-info is-light">
-                <strong>¡CATEGORIA REGISTRADA!</strong><br>
-                La categoría se registro con exito
+                <strong>¡ÁREA REGISTRADO!</strong><br>
+                El Área se registro con exito
             </div>
         ';
     }else{
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
-                No se pudo registrar la categoría, por favor intente nuevamente
+                No se pudo registrar el equipo, por favor intente nuevamente
             </div>
         ';
     }

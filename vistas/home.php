@@ -30,7 +30,7 @@
         <div class="small-box bg-primary">
           <div class="inner">
             <h3><span id="categoriasCount">0</span></h3>
-            <h4>CATEGORIAS</h4>
+            <h4>ÁREAS</h4>
           </div>
           <div class="icon">
             <i class="ion ion-podium"></i>

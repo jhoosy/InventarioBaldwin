@@ -114,34 +114,7 @@
     $check_codigo=null;
 
 
-    /*== Verificando nombre ==*/
-    $check_marca=conexion();
-    $check_marca=$check_marca->query("SELECT producto_marca FROM producto WHERE producto_marca='$marca'");
-    if($check_marca->rowCount()>0){
-        echo '
-            <div class="notification is-danger is-light">
-                <strong>¡Ocurrio un error inesperado!</strong><br>
-                La Marca ingresada ya se encuentra registrado, por favor elija otro
-            </div>
-        ';
-        exit();
-    }
-    $check_marca=null;
-
-
-    /*== Verificando categoria ==*/
-    $check_categoria=conexion();
-    $check_categoria=$check_categoria->query("SELECT categoria_id FROM categoria WHERE categoria_id='$categoria'");
-    if($check_categoria->rowCount()<=0){
-        echo '
-            <div class="notification is-danger is-light">
-                <strong>¡Ocurrio un error inesperado!</strong><br>
-                La categoría seleccionada no existe
-            </div>
-        ';
-        exit();
-    }
-    $check_categoria=null;
+   
 
 
     /* Directorios de imagenes */
@@ -245,8 +218,8 @@
     if($guardar_producto->rowCount()==1){
         echo '
             <div class="notification is-info is-light">
-                <strong>¡PRODUCTO REGISTRADO!</strong><br>
-                El producto se registro con exito
+                <strong>¡EQUIPO REGISTRADO!</strong><br>
+                El equipo se a registrado con exito
             </div>
         ';
     }else{
@@ -259,7 +232,7 @@
         echo '
             <div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error!</strong><br>
-                No se pudo registrar el producto, por favor intente nuevamente
+                No se pudo registrar el equipo, por favor intente nuevamente
             </div>
         ';
     }

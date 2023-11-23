@@ -1,6 +1,6 @@
 <div class="container is-fluid mb-6">
-    <h1 class="title">Productos</h1>
-    <h2 class="subtitle">Lista de productos por categoría</h2>
+    <h1 class="title">Áreas</h1>
+    <h2 class="subtitle">Lista de equipos por Área</h2>
 </div>
 
 <div class="container pb-6 pt-6">
@@ -9,7 +9,7 @@
     ?>
     <div class="columns">
         <div class="column is-one-third">
-            <h2 class="title has-text-centered">Categorías</h2>
+            <h2 class="title has-text-centered">Áreas</h2>
             <?php
                 $categorias=conexion();
                 $categorias=$categorias->query("SELECT * FROM categoria");

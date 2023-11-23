@@ -32,7 +32,7 @@ body,html{
 /* Estilos para el contenedor de las cajas pequeñas */
 .container-fluid {
 	padding: 70px; /* Ajusta el espaciado según tus necesidades */
-	background-color: rgb(245, 247, 245);
+	background-color: rgb(219, 212, 212);
   }
   
   /* Estilos para las cajas pequeñas */
@@ -95,7 +95,7 @@ body,html{
   }
   
   .bg-warning {
-	background-color: #ffc107; /* Color de fondo amarillo */
+	background-color: #07ff13; /* Color de fondo amarillo */
 	color: #212529; /* Color de texto oscuro */
   }
   
